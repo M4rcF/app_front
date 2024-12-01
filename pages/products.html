@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title>App Front</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/list.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <header>
+          <nav>
+            <ul>
+              <li>
+                <a href="../index.html">Back</a>
+              </li>
+              <li>
+                <img src="../img/profile-user.png" width="15px"/>
+                <a href="#contact">Sign-in</a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+        <div class="add">
+          <img src="../img/plus.png" width="28"/>
+        </div>
+
+        <div class="search-bar">
+          <input type="text" id="searchInput" placeholder="Pesquisar por produto..."/>
+        </div>
+
+        <div class="tableContainer">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="productTable">
+              <tr>
+                <td>1</td>
+                <td>Smartphone XYZ</td>
+                <td>Smartphone com 64GB de memória, 4GB de RAM e câmera de 12MP.</td>
+                <td>50</td>
+                <td>R$ 1999,99</td>
+                <td>
+                  <img src="../img/edit.png" width="15"/>
+                </td>
+                <td>
+                  <img src="../img/delete.png" width="15"/>
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Notebook ABC</td>
+                <td>Notebook com processador i7, 16GB de RAM e 512GB de SSD.</td>
+                <td>30</td>
+                <td>R$ 4999,99</td>
+                <td>
+                  <img src="../img/edit.png" width="15"/>
+                </td>
+                <td>
+                  <img src="../img/delete.png" width="15"/>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script src="../js/script.js"></script>
+  </body>
+</html>

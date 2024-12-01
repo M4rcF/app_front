@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tela de Login</title>
+    <!-- Importação dos estilos -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/login.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="content login-content">
+        <!-- Cabeçalho -->
+        <header>
+          <nav>
+            <ul>
+              <li>
+                <a href="../index.html" class="back-link" aria-label="Voltar para a página inicial">Voltar</a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+
+        <!-- Formulário de Login -->
+        <main class="login-main">
+          <div class="login-form-container">
+            <h2>Login</h2>
+            <form action="" method="POST" class="login-form" aria-labelledby="login-form">
+              <div class="input-group">
+                <label for="username" class="sr-only">Usuário</label>
+                <input type="text" id="username" name="username" placeholder="Digite seu nome de usuário" required aria-required="true" />
+              </div>
+
+              <div class="input-group">
+                <label for="password" class="sr-only">Senha</label>
+                <input type="password" id="password" name="password" placeholder="Digite sua senha" required aria-required="true" />
+              </div>
+
+              <div class="form-action">
+                <button type="submit" class="login-btn">Entrar</button>
+              </div>
+            </form>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
