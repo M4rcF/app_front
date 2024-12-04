@@ -1,0 +1,73 @@
+/* Estilos para o container de cadastro */
+.cadastro-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  /* background-color: rgba(0, 0, 0, 0.1); */
+}
+
+/* Estilos da caixa de cadastro */
+.cadastro-box {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+/* Estilo do título */
+.cadastro-box h2 {
+  color: #233448;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+/* Estilo do título da seção */
+.section-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px 0 10px 0;
+  color: #233448;
+  text-align: left;
+  width: 100%;
+  padding-left: 10px;
+}
+
+/* Estilos dos campos de entrada (textbox) */
+.textbox {
+  margin-bottom: 20px;
+}
+
+.textbox input {
+  width: 90%;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  outline: none;
+}
+
+.textbox input:focus {
+  border-color: #233448;
+}
+
+/* Estilo do botão de cadastro */
+.button-container button {
+  width: 100%;
+  padding: 15px;
+  background-color: #233448;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 22px;
+}
+
+.button-container button:hover {
+  background-color: #1d2c3a;
+}

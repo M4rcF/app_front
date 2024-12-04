@@ -1,0 +1,73 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+/* Caixa de login */
+.login-box {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+}
+
+/* Título */
+.login-box h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Estilo para os campos de input */
+.textbox {
+  margin-bottom: 20px;
+}
+
+.textbox input {
+  width: 90%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.textbox input:focus {
+  border-color: #233448;
+}
+
+/* Botão de login */
+.button-container button {
+  width: 100%;
+  padding: 12px;
+  background-color: #233448;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button-container button:hover {
+  background-color: #1d2c3a;
+}
+
+/* Link para o cadastro */
+.signup-link {
+  margin-top: 20px;
+}
+
+.signup-link a {
+  color: #4e8bff;
+  text-decoration: none;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}

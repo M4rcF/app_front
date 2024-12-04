@@ -6,9 +6,19 @@ const urlRoutes = {
     title: "Home | " + urlPageTitle,
     description: "Bem-vindo à página inicial",
   },
-  "#/about": {
-    template: "pages/about.html",
-    title: "About Us | " + urlPageTitle,
+  "#/create": {
+    template: "pages/create.html",
+    title: "Create poll | " + urlPageTitle,
+    description: "Bem-vindo à página inicial",
+  },
+  "#/login": {
+    template: "pages/login.html",
+    title: "Login | " + urlPageTitle,
+    description: "Página sobre nós",
+  },
+  "#/signup": {
+    template: "pages/signup.html",
+    title: "Sign-up | " + urlPageTitle,
     description: "Página sobre nós",
   },
 };
@@ -25,7 +35,7 @@ document.addEventListener("click", (e) => {
 const changeLinkColor = (path) => {
   const link = document.querySelector(`a[href="${path}"]`);
 
-  if (path != "#/create_poll") {
+  if (path != "#/create") {
     link.style.background = '#6282a8'
   }
 

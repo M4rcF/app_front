@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastrar Enquete</title>
+  <link rel="stylesheet" href="../css/create.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Cadastrar Nova Enquete</h1>
+    <form id="cadastro-enquete-form">
+      <div class="form-group">
+        <label for="titulo">Título da Enquete</label>
+        <input type="text" id="titulo" name="titulo" required placeholder="Digite o título da enquete" />
+      </div>
+
+      <div class="form-group">
+        <label for="descricao">Descrição</label>
+        <textarea id="descricao" name="descricao" rows="4" required placeholder="Digite a descrição da enquete (máximo de 100 caracteres)"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="data-expiracao">Data de Expiração</label>
+        <input type="date" id="data-expiracao" name="data-expiracao" required />
+      </div>
+
+      <div class="form-group">
+        <label for="opcao1">Opção 1</label>
+        <input type="text" id="opcao1" name="opcao1" required placeholder="Digite a primeira opção" />
+      </div>
+
+      <div class="form-group">
+        <label for="opcao2">Opção 2</label>
+        <input type="text" id="opcao2" name="opcao2" required placeholder="Digite a segunda opção" />
+      </div>
+
+      <div class="form-group">
+        <label for="opcao3">Opção 3</label>
+        <input type="text" id="opcao3" name="opcao3" required placeholder="Digite a terceira opção" />
+      </div>
+
+      <div class="form-group">
+        <label for="opcao4">Opção 4</label>
+        <input type="text" id="opcao4" name="opcao4" required placeholder="Digite a quarta opção" />
+      </div>
+
+      <button type="submit">Cadastrar Enquete</button>
+    </form>
+  </div>
+</body>
+</html>
