@@ -1,12 +1,13 @@
 const urlPageTitle = "JS Single Page Application Router";
+const iframe = document.getElementById("content");
 
 const urlRoutes = {
   "#/": {
-    template: "pages/index.html",
+    template: "pages/polls.html",
     title: "Home | " + urlPageTitle,
     description: "Bem-vindo à página inicial",
   },
-  "#/create": {
+  "#/createPoll": {
     template: "pages/create.html",
     title: "Create poll | " + urlPageTitle,
     description: "Bem-vindo à página inicial",
@@ -21,16 +22,12 @@ const urlRoutes = {
     title: "Sign-up | " + urlPageTitle,
     description: "Página sobre nós",
   },
+  "#/users": {
+    template: "pages/users.html",
+    title: "Users | " + urlPageTitle,
+    description: "Gerenciamento de usuários",
+  },
 };
-
-document.addEventListener("click", (e) => {
-  const { target } = e;
-  if (!target.matches("nav a")) {
-    return;
-  }
-  e.preventDefault();
-  window.location.hash = target.getAttribute("href");
-});
 
 const changeLinkColor = (path) => {
   const link = document.querySelector(`a[href="${path}"]`);
@@ -52,7 +49,6 @@ const urlLocationHandler = () => {
 
   const route = urlRoutes[location] || urlRoutes["#/"];
 
-  const iframe = document.getElementById("content");
   iframe.src = route.template;
   changeLinkColor(location || "#/")
 
@@ -63,6 +59,38 @@ const urlLocationHandler = () => {
     .setAttribute("content", route.description);
 };
 
+document.addEventListener("click", (e) => {
+  const { target } = e;
+  if (!target.matches("nav a")) {
+    return;
+  }
+
+  e.preventDefault();
+  window.location.hash = target.getAttribute("href");
+});
+
 window.addEventListener("hashchange", urlLocationHandler);
 
 urlLocationHandler();
+
+window.addEventListener('message', function(event) {
+  if (['logged', 'blocked'].includes(event.data)) {
+    window.location.hash = "#/"
+
+    const route = urlRoutes["#/"]
+    iframe.src = route.template;
+    changeLinkColor( "#/")
+
+    document.title = route.title;
+    document
+      .querySelector('meta[name="description"]')
+      .setAttribute("content", route.description);
+
+    if (event.data == 'logged') {
+      document.querySelector('.nav-login').style.display='none'
+      document.getElementById('nav-users').style.display='flex'
+
+      window.location.reload();
+    }
+  }
+});

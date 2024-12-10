@@ -1,18 +1,21 @@
-/* Reset basic styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Body and container styles */
 body {
-  font-family: Arial, sans-serif;
   background-color: #f4f4f4;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+}
+
+.title {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 .container {
@@ -65,7 +68,7 @@ textarea {
 }
 
 button {
-  background-color: #4CAF50;
+  background-color: #F4BB44;
   color: white;
   font-size: 1rem;
   padding: 12px;
@@ -76,7 +79,7 @@ button {
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: #FFC000;
 }
 
 /* Button disabled state */

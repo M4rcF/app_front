@@ -12,29 +12,35 @@
       <div id="main">
         <nav>
           <div class="nav-icon">
-            <a href="#/create">
+            <a href="#/createPoll">
               <img src="img/plus.svg" alt="Criar nova pesquisa" />
             </a>
-          </div>
-          <div class="nav-links">
-            <a href="#/">Polls</a>
-            <a href="#/about">Create poll</a>
+            <a href="#/">Enquetes</a>
           </div>
           <div class="nav-login">
             <a href="#/signup">
-              <span>Register</span>
+              <span>Registrar</span>
             </a>
             <a href="#/login">
-              <span>Login</span>
+              <span>Entrar</span>
               <img src="img/enter.svg" alt="Login" />
+            </a>
+          </div>
+          <div id="nav-users" class="nav-icon">
+            <a href="#/users">
+              <span>Users</span>
+            </a>
+            <a id="logout-button">
+              <span>Sair</span>
             </a>
           </div>
         </nav>
 
-        <!-- Área onde o conteúdo será carregado -->
         <iframe id="content"></iframe>
       </div>
     </div>
+    <script src="./services/authentication.js"></script>
+    <script src="js/index.js"></script>
     <script src="js/url-router.js"></script>
   </body>
 </html>
