@@ -82,6 +82,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       alert('Usuário atualizado com sucesso!');
       modalOverlay.style.display = 'none';
 
-      window.location.reload();
+      parent.postMessage('logged', '*')
   });
 });

@@ -4,17 +4,63 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Voting Cards</title>
-    <link rel="stylesheet" href="../css/polls.css">
+    <link rel="stylesheet" href="../css/polls/styles.css" />
+    <link rel="stylesheet" href="../css/polls/edit.css" />
+    <link rel="stylesheet" href="../css/polls/delete.css" />
   </head>
   <body>
+    <!-- Alert for login -->
     <div class="alert-to-login">
-      <h3>Para votar visualizar as enquentes e votar, é necessário estar autenticado!</h3>
+      <h3>Para visualizar as enquetes e votar, é necessário estar autenticado!</h3>
     </div>
+
+    <!-- Main container -->
     <div class="container">
-      <div class="cards-container">
+      <div class="cards-container"></div>
+    </div>
+
+    <!-- Modal for editing poll -->
+    <div id="editPollModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn-edit">&times;</span>
+        <h3>Editar Enquete</h3>
+        <form id="editPollForm">
+          <label for="pollTitle">Título:</label>
+          <input type="text" id="pollTitle" name="title" required />
+
+          <label for="pollDescription">Descrição:</label>
+          <textarea id="pollDescription" name="description" maxlength="100" required></textarea>
+
+          <label for="data-expiracao">Data de Expiração:</label>
+          <input id="expires_at" type="date" name="data-expiracao" required />
+
+          <div id="pollOptionsContainer"></div>
+
+          <div class="options-controls">
+            <button type="button" class="add-option-btn" id="addOptionBtn">Adicionar Opção</button>
+          </div>
+
+          <button class="edit-submit-btn" type="submit">Salvar Alterações</button>
+        </form>
       </div>
     </div>
+
+    <!-- Modal for confirming poll deletion -->
+    <div id="confirmDeleteModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Confirmar Exclusão</h2>
+        <p>Tem certeza de que deseja excluir esta enquete? Esta ação não pode ser desfeita.</p>
+        <div class="modal-actions">
+          <button id="confirmDeleteBtn" class="confirm-btn">Excluir</button>
+          <button id="cancelDeleteBtn" class="cancel-btn">Cancelar</button>
+        </div>
+      </div>
+    </div>
+
     <script src="../services/api.js"></script>
-    <script src="../js/polls.js"></script>
+    <script src="../js/polls/init.js"></script>
+    <script src="../js/polls/edit.js"></script>
+    <script src="../js/polls/delete.js"></script>
   </body>
 </html>

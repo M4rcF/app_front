@@ -1,0 +1,100 @@
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-top: 60px;
+  font-family: "Gill Sans", sans-serif;
+}
+
+.modal-content {
+  background-color: white;
+  margin: 0% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+}
+
+.close-btn-edit {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-btn-edit:hover,
+.close-btn-edit:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal form label {
+  font-size: 0.8rem;
+  margin-top: 10px;
+}
+
+.modal form input,
+.modal form .expires_at,
+.modal form textarea {
+  font-size: 0.8rem;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.modal form .add-option-btn,
+.modal form .remove-option-btn {
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  font-size: 0.8rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: 0.4s;
+}
+
+.modal form .add-option-btn {
+  background-color: #4CAF50;
+}
+
+.modal form .remove-option-btn {
+  background-color: #FF0000;
+  margin-left: 10px !important;
+}
+
+.modal form .add-option-btn:hover {
+  background-color: #39873c;
+}
+
+.modal form .remove-option-btn:hover {
+  background-color: #c50101;
+}
+
+.modal form .edit-submit-btn {
+  background-color: #ffffff;
+  border-radius: 5px;
+  margin-top: 20px;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.4s;
+}
+
+.modal form .edit-submit-btn:hover {
+  background-color: #000000;
+  color: #ffffff;
+}

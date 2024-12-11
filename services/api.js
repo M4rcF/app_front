@@ -52,6 +52,64 @@ const api = {
     }
   },
 
+  postVote: async (poll_id, poll_option_id) => {
+    try {
+      const response = await fetch(`${apiUrl}/polls/${poll_id}/poll_options/${poll_option_id}/votes`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      showErrorIfExists(response);
+
+      return await response.json();
+    } catch (error) {
+      console.error(error);
+      alert('Erro ao realizar voto.');
+    }
+  },
+
+  putPoll: async (poll_id, poll) => {
+    try {
+      const response = await fetch(`${apiUrl}/polls/${poll_id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(poll),
+      });
+
+      showErrorIfExists(response);
+
+      return await response.json();
+    } catch (error) {
+      console.error(error);
+      alert('Erro ao realizar voto.');
+    }
+  },
+
+  deletePoll: async (poll_id) => {
+    try {
+      const response = await fetch(`${apiUrl}/polls/${poll_id}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      showErrorIfExists(response);
+
+      return await response.json();
+    } catch (error) {
+      console.error(error);
+      alert('Erro ao realizar voto.');
+    }
+  },
+
   getUsers: async () => {
     try {
       const response = await fetch(`${apiUrl}/users`, {

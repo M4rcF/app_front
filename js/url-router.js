@@ -89,8 +89,8 @@ window.addEventListener('message', function(event) {
     if (event.data == 'logged') {
       document.querySelector('.nav-login').style.display='none'
       document.getElementById('nav-users').style.display='flex'
-
-      window.location.reload();
     }
+
+    window.location.reload();
   }
 });

@@ -68,6 +68,7 @@ if (form && token) {
        if (response) {
         alert('Enquete cadastrada com sucesso!');
         form.reset();
+
         optionsContainer.innerHTML = '';
         optionCount = 0;
         addOption(); // Adiciona a primeira opção novamente
