@@ -51,6 +51,7 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+.nav-icon a:hover,
 .nav-links a:hover,
 .nav-login a:hover {
   background-color: #354a73;
@@ -69,13 +70,22 @@ body {
   transform: rotate(10deg);
 }
 
+.logout-btn {
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.logout-btn:hover {
+  color: #ff0000;
+}
+
 #content {
   width: 100%;
-  height: calc(100vh - 120px);
+  height: calc(100vh - 85px);
   border: none;
-  border-radius: 8px;
   margin-top: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 0 !important;
 }
 
 @media (max-width: 768px) {

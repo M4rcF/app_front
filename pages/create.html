@@ -9,7 +9,7 @@
   <body>
     <div class="container">
       <div class="title">
-        <h2>Cadastrar Nova Enquete</h2>
+        <h3>Cadastrar Nova Enquete</h3>
       </div>
       <form id="create-poll-form">
         <div class="form-group">
@@ -29,8 +29,9 @@
             id="description"
             name="descricao"
             rows="4"
-            required
             placeholder="Digite a descrição da enquete (máximo de 100 caracteres)"
+            maxlength="100"
+            required
           ></textarea>
         </div>
 
@@ -45,14 +46,15 @@
         </div>
 
         <div class="form-group">
+          <label>Opções</label>
           <div id="poll-options-container">
             <!-- As opções serão adicionadas aqui dinamicamente -->
           </div>
-          <button type="button" id="add-option-button">Adicionar Opção</button>
-          <button type="button" id="remove-option-button">Remover Opção</button>
+          <button type="button" class="add-option-btn" id="add-option-button">Adicionar Opção</button>
+          <!-- <button type="button" id="remove-option-button">Remover Opção</button> -->
         </div>
 
-        <button type="submit">Cadastrar Enquete</button>
+        <button class="create-submit-btn" type="submit">Cadastrar Enquete</button>
       </form>
     </div>
     <script src="../services/api.js"></script>

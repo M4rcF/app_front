@@ -1,7 +1,6 @@
 const authentication = {
   postSignUp: async (user) => {
     try {
-      console.log('Tentando enviar para a API de cadastro:', user);
       const url = 'http://localhost:5000/api/sign_up';
 
       const response = await fetch(url, {
@@ -25,7 +24,6 @@ const authentication = {
 
   postLogin: async (user) => {
     try {
-      console.log('Tentando enviar para a API de login:', user);
       const url = 'http://localhost:5000/api/login';
 
       const response = await fetch(url, {
@@ -49,7 +47,6 @@ const authentication = {
 
   postLogout: async (token) => {
     try {
-      console.log(`Tentando enviar para a API de logout ${token}`);
       const url = 'http://localhost:5000/api/logout';
 
       const response = await fetch(url, {

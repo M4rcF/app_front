@@ -19,14 +19,18 @@
   font-weight: bold;
 }
 
-/* Header */
 h1 {
   font-size: 2.5rem;
   margin-bottom: 30px;
   color: #333;
 }
 
-/* Cards container */
+.empty-polls {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
+
 .cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -34,9 +38,8 @@ h1 {
   padding: 20px 0;
 }
 
-/* Individual card styles */
 .card {
-  background-color: white;
+  background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -48,10 +51,26 @@ h1 {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Card header styles */
+.card-options {
+  display: flex;
+  justify-content: end;
+  gap: 20px;
+}
+
+.card-options img {
+  width: 20px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.card-options img:hover {
+  transform: scale(1.2);
+}
+
 .card-header {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
   margin-bottom: 15px;
 }
@@ -69,19 +88,6 @@ h1 {
   color: #777;
 }
 
-/* Edit button (in the card header) */
-.card-header img {
-  width: 24px;
-  height: auto;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.card-header img:hover {
-  transform: scale(1.2);
-}
-
-/* Card description styles */
 .card-description {
   font-size: 1rem;
   color: #555;
@@ -92,7 +98,6 @@ h1 {
   height: 40px;
 }
 
-/* Vote options styles */
 .vote-options {
   display: flex;
   flex-direction: column;
@@ -100,27 +105,29 @@ h1 {
 }
 
 .vote-option {
-  background-color: #F4BB44;
+  background-color: #ffffff;
 }
 
 .voted-option {
   background-color: green;
+  color: white;
 }
 
 .vote-option, .voted-option {
-  color: white;
-  border: none;
   border-radius: 5px;
   padding: 10px;
   cursor: pointer;
   font-size: 1rem;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  border: 1px solid #000000;
+  transition: 0.4s;
 }
 
 .vote-option:hover {
-  background-color: #FFC000;
+  background-color: #000000;
+  color: #ffffff;
 }
 
+/*
 .vote-option:disabled {
   background-color: #ccc;
   cursor: not-allowed;
@@ -128,9 +135,8 @@ h1 {
 
 .vote-option:active {
   transform: scale(0.98);
-}
+} */
 
-/* Media queries for responsiveness */
 @media (max-width: 768px) {
   h1 {
     font-size: 2rem;

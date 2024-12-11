@@ -27,6 +27,11 @@ const urlRoutes = {
     title: "Users | " + urlPageTitle,
     description: "Gerenciamento de usuários",
   },
+  "#/votes": {
+    template: "pages/votes.html",
+    title: "Votes | " + urlPageTitle,
+    description: "Gerenciamento de usuários",
+  },
 };
 
 const changeLinkColor = (path) => {
@@ -74,19 +79,26 @@ window.addEventListener("hashchange", urlLocationHandler);
 urlLocationHandler();
 
 window.addEventListener('message', function(event) {
-  if (['logged', 'blocked'].includes(event.data)) {
-    window.location.hash = "#/"
+  if (['reload', 'blocked', 'register'].includes(event.data)) {
+    console.log('oi', event.data);
 
-    const route = urlRoutes["#/"]
+    let routePath = "#/"
+    if (event.data === 'register') {
+      routePath = "#/login"
+    }
+
+    window.location.hash = routePath
+
+    const route = urlRoutes[routePath]
     iframe.src = route.template;
-    changeLinkColor( "#/")
+    changeLinkColor(routePath)
 
     document.title = route.title;
     document
       .querySelector('meta[name="description"]')
       .setAttribute("content", route.description);
 
-    if (event.data == 'logged') {
+    if (event.data == 'reload') {
       document.querySelector('.nav-login').style.display='none'
       document.getElementById('nav-users').style.display='flex'
     }

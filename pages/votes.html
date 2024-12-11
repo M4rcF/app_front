@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela de Usuários</title>
+    <link rel="stylesheet" href="../css/votes.css">
+  </head>
+  <body>  
+    <div class="container">
+      <table id="votes-table">
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Nome do indivíduo</th>
+            <th>Nome da enquete</th>
+            <th>Opção</th>
+          </tr>
+        </thead>
+        <tbody id="tbody-list"></tbody>
+      </table>
+    </div>
+    <div
+      id="empty-div"
+      class="empty-list"
+    >
+      <h3>Não há votos disponíveis!</h3>
+    </div>
+    <script src="../services/api.js"></script>
+    <script src="../js/votes.js"></script>
+  </body>
+</html>

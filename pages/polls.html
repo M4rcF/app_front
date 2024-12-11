@@ -14,6 +14,10 @@
       <h3>Para visualizar as enquetes e votar, é necessário estar autenticado!</h3>
     </div>
 
+    <div class="empty-polls">
+      <h3>Nenhuma enquete registrada</h3>
+    </div>
+
     <!-- Main container -->
     <div class="container">
       <div class="cards-container"></div>
@@ -34,7 +38,9 @@
           <label for="data-expiracao">Data de Expiração:</label>
           <input id="expires_at" type="date" name="data-expiracao" required />
 
-          <div id="pollOptionsContainer"></div>
+          <label>Opções<label>
+          <div id="pollOptionsContainer">
+          </div>
 
           <div class="options-controls">
             <button type="button" class="add-option-btn" id="addOptionBtn">Adicionar Opção</button>

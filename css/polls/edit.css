@@ -92,6 +92,7 @@
   cursor: pointer;
   font-weight: bold;
   transition: 0.4s;
+  width: 100%;
 }
 
 .modal form .edit-submit-btn:hover {

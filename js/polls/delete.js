@@ -32,7 +32,7 @@ container.addEventListener('click', async (event) => {
     const pollId = event.target.dataset.pollId;
     openDeleteModal(pollId, async (poll_id) => {
       await api.deletePoll(poll_id);
-      parent.postMessage('logged', '*');
+      parent.postMessage('reload', '*');
     });
   }
 })

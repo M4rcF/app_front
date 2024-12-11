@@ -10,12 +10,11 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  font-family: "Gill Sans", sans-serif;
 }
 
 .title {
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: center;
+  margin-bottom: 20px;
 }
 
 .container {
@@ -27,22 +26,12 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Header */
-h1 {
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-/* Form styles */
 form {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-/* Form group styles */
 .form-group {
   display: flex;
   flex-direction: column;
@@ -50,14 +39,14 @@ form {
 }
 
 label {
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: #333;
   font-weight: bold;
 }
 
 input, textarea {
   padding: 10px;
-  font-size: 1rem;
+  font-size: 0.8rem;
   border: 1px solid #ccc;
   border-radius: 5px;
   width: 100%;
@@ -67,28 +56,61 @@ textarea {
   resize: vertical;
 }
 
-button {
-  background-color: #F4BB44;
-  color: white;
-  font-size: 1rem;
-  padding: 12px;
+.add-option-btn,
+.remove-option-btn {
+  color: #ffffff;
   border: none;
+  padding: 10px;
+  font-size: 0.8rem;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  margin-top: 20px;
+  transition: 0.4s;
 }
 
-button:hover {
-  background-color: #FFC000;
+.add-option-btn {
+  background-color: #4CAF50;
+  width: 150px;
 }
 
-/* Button disabled state */
-button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
+.remove-option-btn {
+  background-color: #FF0000;
+  margin-left: 10px !important;
 }
 
-/* Media queries for responsiveness */
+.add-option-btn:hover {
+  background-color: #39873c;
+}
+
+.remove-option-btn:hover {
+  background-color: #c50101;
+}
+
+.option-field p {
+  font-size: 0.8rem;
+  margin-top: 10px;
+}
+
+
+.option-field input{
+  width: 250px;
+}
+
+.create-submit-btn {
+  background-color: #ffffff;
+  border-radius: 5px;
+  margin-top: 20px;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.4s;
+}
+
+.create-submit-btn:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 20px;

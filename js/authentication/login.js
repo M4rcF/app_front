@@ -15,9 +15,10 @@ if (form) {
 
       sessionStorage.setItem('token', response.token);
 
-      parent.postMessage('logged', '*')
+      parent.postMessage('reload', '*')
+      window.location.reload()
     } catch (error) {
-      alert('Erro ao logar. Por favor, tente novamente.');
+      alert('Erro ao logar. Por favor, verifique email e senha.');
       console.error(error.message);
     }
   });
