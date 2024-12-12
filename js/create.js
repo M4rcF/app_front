@@ -8,6 +8,7 @@ if (!token) {
 }
 
 createOptionField('', 0);
+createOptionField('', 1);
 
 function createOptionField(optionText, index) {
   const removeButtons = optionsContainer.querySelectorAll(
@@ -36,7 +37,7 @@ function createOptionField(optionText, index) {
     const removeButtons = optionsContainer.querySelectorAll(
       '.remove-option-btn'
     );
-    const isRemovable = removeButtons.length > 1;
+    const isRemovable = removeButtons.length > 2;
 
     removeButtons.forEach((button) => {
       button.disabled = !isRemovable;
