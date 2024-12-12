@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       votesTable.style.display = 'table';
       emptyDiv.style.display = 'none';
 
-      console.log('votes', response)
       response.votes.forEach((vote) => {
         const tr = document.createElement('tr');
         tr.innerHTML = `

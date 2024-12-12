@@ -15,8 +15,7 @@ if (form) {
 
       sessionStorage.setItem('token', response.token);
 
-      parent.postMessage('reload', '*')
-      window.location.reload()
+      parent.postMessage('login', '*');
     } catch (error) {
       alert('Erro ao logar. Por favor, verifique email e senha.');
       console.error(error.message);

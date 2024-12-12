@@ -1,43 +1,63 @@
-const urlPageTitle = "JS Single Page Application Router";
+const urlPageTitle = "Single Page Application Project";
 const iframe = document.getElementById("content");
+const navLogin = document.querySelector('.nav-login');
+const navUsers = document.getElementById('nav-users');
+
+const logoutButton = document.getElementById('logout-button');
+
+if (token) {
+  navLogin.style.display='none'
+} else {
+  navUsers.style.display='none'
+}
+
+
+logoutButton.addEventListener('click', async (event) => {
+  event.preventDefault();
+
+  try {
+    await authentication.postLogout(token);
+    alert('Usuário deslogado com sucesso!');
+
+    sessionStorage.removeItem('token');
+    window.location.reload();
+  } catch (error) {
+    alert('Erro ao deslogar. Por favor, tente novamente.');
+    console.error(error.message);
+  }
+});
 
 const urlRoutes = {
   "#/": {
     template: "pages/polls.html",
     title: "Home | " + urlPageTitle,
-    description: "Bem-vindo à página inicial",
   },
   "#/createPoll": {
     template: "pages/create.html",
     title: "Create poll | " + urlPageTitle,
-    description: "Bem-vindo à página inicial",
   },
   "#/login": {
     template: "pages/login.html",
     title: "Login | " + urlPageTitle,
-    description: "Página sobre nós",
   },
   "#/signup": {
     template: "pages/signup.html",
     title: "Sign-up | " + urlPageTitle,
-    description: "Página sobre nós",
   },
   "#/users": {
     template: "pages/users.html",
     title: "Users | " + urlPageTitle,
-    description: "Gerenciamento de usuários",
   },
   "#/votes": {
     template: "pages/votes.html",
     title: "Votes | " + urlPageTitle,
-    description: "Gerenciamento de usuários",
   },
 };
 
 const changeLinkColor = (path) => {
   const link = document.querySelector(`a[href="${path}"]`);
 
-  if (path != "#/create") {
+  if (path != "#/create" && link) {
     link.style.background = '#6282a8'
   }
 
@@ -58,10 +78,6 @@ const urlLocationHandler = () => {
   changeLinkColor(location || "#/")
 
   document.title = route.title;
-
-  document
-    .querySelector('meta[name="description"]')
-    .setAttribute("content", route.description);
 };
 
 document.addEventListener("click", (e) => {
@@ -79,9 +95,7 @@ window.addEventListener("hashchange", urlLocationHandler);
 urlLocationHandler();
 
 window.addEventListener('message', function(event) {
-  if (['reload', 'blocked', 'register'].includes(event.data)) {
-    console.log('oi', event.data);
-
+  if (['reload', 'register', 'login'].includes(event.data)) {
     let routePath = "#/"
     if (event.data === 'register') {
       routePath = "#/login"
@@ -94,15 +108,9 @@ window.addEventListener('message', function(event) {
     changeLinkColor(routePath)
 
     document.title = route.title;
-    document
-      .querySelector('meta[name="description"]')
-      .setAttribute("content", route.description);
 
-    if (event.data == 'reload') {
-      document.querySelector('.nav-login').style.display='none'
-      document.getElementById('nav-users').style.display='flex'
+    if ('login' == event.data) {
+      this.window.location.reload();
     }
-
-    window.location.reload();
   }
 });

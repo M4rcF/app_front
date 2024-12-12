@@ -1,3 +1,5 @@
+const token = sessionStorage.getItem('token');
+
 const authentication = {
   postSignUp: async (user) => {
     try {
@@ -45,7 +47,7 @@ const authentication = {
     }
   },
 
-  postLogout: async (token) => {
+  postLogout: async () => {
     try {
       const url = 'http://localhost:5000/api/logout';
 

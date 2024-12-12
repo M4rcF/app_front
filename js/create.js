@@ -4,7 +4,7 @@ const addOptionButton = document.getElementById('add-option-button');
 
 if (!token) {
   alert('Para criar uma enquete vc precisa estar logado!');
-  parent.postMessage('blocked', '*')
+  parent.postMessage('reload', '*')
 }
 
 createOptionField('', 0);

@@ -70,5 +70,5 @@ try {
     e.target.value = value;
   });
 } catch (error) {
-  console.log(`Error ${error}`)
+  console.error(`Error ${error}`)
 }
